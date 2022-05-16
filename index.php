@@ -13,7 +13,7 @@
         <p>Operações de <b>inserção</b>, <b>leitura</b>, <b>atualização</b> e <b>exclusão</b>de dados</p>
 
         <ul>
-            <li><a href="">Fabricantes</a></li>
+            <li><a href="../Exemplos-de-CRUD-com-PHP-e-SQL/fabricantes/listar.php">Fabricantes</a></li>
             <li><a href="">Produtos</a></li>
         </ul>
     </div>
