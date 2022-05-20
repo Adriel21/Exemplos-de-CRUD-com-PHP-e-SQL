@@ -7,6 +7,16 @@ require_once '../src/funcoes-fabricantes.php';
     // echo $id;
 
     $fabricante = lerUmFabricante($conexao, $id);
+
+    if(isset($_POST['atualizar'])) {
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        atualizarFabricante($conexao, $id, $nome);
+        // Mensagem + refresh
+      // header("Refresh:3; url=listar.php"); //header serve para redirecionamento para a página
+       // echo "<p>Fabricante atualizado com sucesso</p>";
+       header("location:listar.php?status=sucesso");
+    }
 ?>
 <!-- <pre><?=var_dump($fabricante)?></pre> -->
 <!DOCTYPE html>

@@ -48,12 +48,24 @@ function lerUmFabricante(PDO $conexao, int $id):array {
     return $resultado;
 }
 
-function atualizarFabricante(PDO $conexao, int $nome):void { 
+function atualizarFabricante(PDO $conexao, int $id, string $nome):void { 
     $sql = "UPDATE fabricantes SET nome = :nome WHERE id = :id";
     try{
         $consulta = $conexao->prepare($sql);
         $consulta->bindParam(':id', $id, PDO::PARAM_INT);
         $consulta->bindParam(':nome', $nome, PDO::PARAM_STR);
+        $consulta->execute();
+    } catch (Exception $erro) {
+        die ("Erro: ". $erro->getMessage());
+    }
+}
+
+
+function excluirFabricante(PDO $conexao, int $id):void { //upadte e select não retorna resultado
+    $sql = "DELETE FROM fabricantes WHERE id = :id"; //o :id se chama parametro nomeado
+    try{
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindParam(':id', $id, PDO::PARAM_INT);
         $consulta->execute();
     } catch (Exception $erro) {
         die ("Erro: ". $erro->getMessage());

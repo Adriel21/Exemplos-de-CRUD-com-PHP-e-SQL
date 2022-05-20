@@ -22,5 +22,5 @@ $conexao->setAttribute(PDO::ATTR_ERRMODE, //Constantes de erros em geral
 PDO::ERRMODE_EXCEPTION); //Constante de excessões de erro - mensagens mais customizadas - podemos melhorar a qualidade na exibição dos erros - esses erros são úteis durante o processo de desenvolvimento, após a finalização, deve ser desabilitado para não exibir dados do back-end para o usuário final
 
 } catch(Exception $erro){
-die("Erro: ".$erro->getMessage()); //A setinha -> funciona como o . no JavaScript para acessar os recursos de um OBJETO
+die("Erro: ".$erro->getMessage()); //A setinha -> funciona como o .(Dom) no JavaScript para acessar os recursos de um OBJETO
 }

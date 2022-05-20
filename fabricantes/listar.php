@@ -21,6 +21,12 @@ $listaDeFabricantes = lerFabricantes($conexao); // Quando a função for chamada
             <a href="inserir.php"></a>
             Inserir novo fabricante
         </p>
+
+        <?php //if( isset($_GET['sucesso']) ){ 
+            if(isset($_GET['status']) && ($_GET['status'] == 'sucesso')) {?>
+
+        <p>Fabricante atualizado com sucesso !</p>
+        <?php }?>
         <table>
             <caption>Lista de fabricantes</caption>
             <thead>
@@ -42,16 +48,37 @@ $listaDeFabricantes = lerFabricantes($conexao); // Quando a função for chamada
                     <tr>
                         <td><?=$fabricante['id']?></td> 
 
-                        <td><?=$fabricante['nome']?></td>
+                        <td id="fab"><?=$fabricante['nome']?></td>
                         <td><a href="atualizar.php?id=<?=$fabricante['id']?>">Atualizar</a></td> <!--Parametro de url para criação de link dinâmico-->
-                        <td><a href="">Excluir</a></td>
+                        <td><a href= "excluir.php?id=<?=$fabricante['id']?>" class="excluir">Excluir</a ></td>
+                        <!-- onclick="return confirm('Deseja excluir?')" -->
                     </tr>
                   <?php } ?>
                 
             </tbody>
         </table>
     </div>
-    <a href="..//fabricantes/inserir.php">Ir</a>
 
+    <script>
+        //Acessando todos os links com a classe excluir
+        const links = document.querySelectorAll('.excluir');
+
+        for(let i = 0; i < links.length; i++){
+            links[i].addEventListener("click", function(event){
+                event.preventDefault();
+                
+                let resposta = confirm("Deseja realmente excluir?");
+
+                if(resposta) location.href = links[i].getAttribute("href");
+                
+            });
+        }
+
+      
+          
+       
+    </script>
+    <a href="..//fabricantes/inserir.php">Ir</a>
+        <script src="../seguranca.php"></script>
 </body>
 </html>
