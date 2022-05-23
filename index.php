@@ -14,7 +14,7 @@
 
         <ul>
             <li><a href="../Exemplos-de-CRUD-com-PHP-e-SQL/fabricantes/listar.php">Fabricantes</a></li>
-            <li><a href="">Produtos</a></li>
+            <li><a href="produtos/produtos.php">Produtos</a></li>
         </ul>
     </div>
 </body>
