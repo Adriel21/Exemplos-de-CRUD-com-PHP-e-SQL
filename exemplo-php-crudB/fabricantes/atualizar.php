@@ -1,5 +1,5 @@
 <?php
-require_once '../src/funcoes-fabricantes.php';
+// require_once '../src/funcoes-fabricantes.php';
 
 // Obtendo o valor do parâmetro da URL
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);

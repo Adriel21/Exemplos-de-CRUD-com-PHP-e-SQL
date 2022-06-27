@@ -43,7 +43,19 @@ public function inserirFabricante():void {
 }
 
 
+public function lerUmFabricante():array {
+    $sql = "SELECT id, nome FROM fabricantes WHERE id = :id";
 
+    try {
+        $consulta = $this->conexao->prepare($sql);
+        $consulta->bindParam(':id', $this->id, PDO::PARAM_INT);
+        $consulta->execute();
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $erro) {
+        die("Erro: " .$erro->getMessage());
+    }
+    return $resultado;
+}
 
 
 
@@ -71,7 +83,7 @@ public function inserirFabricante():void {
 
     public function setNome(string $nome)
     {
-        $this->nome = $nome;
+        $this->nome = filter_var($nome, FILTER_SANITIZE_SPECIAL_CHARS);
 
     
     }

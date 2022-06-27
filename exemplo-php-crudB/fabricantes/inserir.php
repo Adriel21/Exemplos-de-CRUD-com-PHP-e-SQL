@@ -11,9 +11,7 @@ if( isset($_POST['inserir']) ){
     $fabricante = new CrudPoo\Fabricante;
 
     // Usando o setter para definir o nome do novo fabriante
-    $fabricante->setNome(
-        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS)
-    );
+    $fabricante->setNome($_POST['nome']);
     // Capturando e limpando o que foi digitado no campo nome
     // $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 
