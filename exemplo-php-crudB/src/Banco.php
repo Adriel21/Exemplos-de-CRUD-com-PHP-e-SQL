@@ -29,7 +29,7 @@ abstract class Banco {
 
     // Habilita a verificação de erros (em geral e exceções)
     self::$conexao->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "ok!"; // Teste
+        // echo "ok!"; // Teste
         } catch(Exception $erro) {
             die("Deu ruim: ".$erro->getMessage());
         }
