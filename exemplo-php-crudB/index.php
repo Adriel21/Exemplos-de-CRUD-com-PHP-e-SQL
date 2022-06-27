@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>CRUD - Sistema Vendas</h1>
+        <h1>CRUD - Sistema Vendas (Versão POO)</h1>
         <hr>
-        <p>Operações de <b>inserção</b>, <b>leitura</b>, <b>atualização</b> e <b>exclusão</b> de dados.</p>
+        <p><i>Versão usando Namespaces, Composer, Autoload, classes, métodos, propriedades</i></p>
 
         <ul>
             <li><a href="fabricantes/listar.php">Fabricantes</a></li>
